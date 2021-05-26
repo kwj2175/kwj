@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html class="no-js"> 
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>이상형 월드컵</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="worldcup_w.css">
+  </head>
+  <body onload="preLoaingImg()">
+    <div class="wrap">
+      <header>
+        <h1>남자 연예인 이상형 월드컵</h1>
+        <p id="roundTitle">당신의 최고의 남자연예인을 골라주세요!</p>
+      </header>
+      <div class="content default" id="content">
+        <button id="btnGameStart" onclick="start()">게임 참여</button>
+      </div>
+      <footer class="footer soff" id="footer">
+        <button id="cancel" onclick="worldcup_w.Event.clickCancel()">취소</button>
+        <button id="prev" onclick="worldcup_w.Event.clickPrev()">이전</button>
+      </footer>
+    </div>
+    <script src="worldcup_w.js?ver=2" async defer></script>
+    <script>
+      function start() {
+        worldcup_w.start();
+      }
+      function preLoaingImg() {
+        const preLoadingList = [
+          '01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg'
+        ], length = preLoadingList.length, tObj = document.getElementsByTagName("BODY")[0];
+        let i = 0, imgNode;
+        const hiddenNode = document.createElement('DIV');
+        hiddenNode.className = 'pre_load soff';
+        for(i; i < length; i++) {
+          imgNode = document.createElement('IMG');
+          imgNode.setAttribute('src', preLoadingList[i]);
+          hiddenNode.appendChild(imgNode);
+        }
+        tObj.appendChild(hiddenNode);
+      }
+    </script>
+  </body>
+</html>
